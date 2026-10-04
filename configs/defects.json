@@ -1,0 +1,88 @@
+{
+  "compiler": "iverilog",
+  "runtime": "vvp",
+  "systemverilog_flag": "-g2012",
+  "report_name": "defect_results",
+  "runs": [
+    {
+      "name": "counter_reset_defect",
+      "defect_category": "reset",
+      "expected_status": "FAIL",
+      "top": "counter_tb",
+      "sources": [
+        "rtl/defects/counter_reset_bug.sv",
+        "testbenches/counter_tb.sv"
+      ],
+      "parameters": {
+        "counter_tb.WIDTH": 4
+      }
+    },
+    {
+      "name": "counter_timing_defect",
+      "defect_category": "timing",
+      "expected_status": "FAIL",
+      "top": "counter_tb",
+      "sources": [
+        "rtl/defects/counter_timing_bug.sv",
+        "testbenches/counter_tb.sv"
+      ],
+      "parameters": {
+        "counter_tb.WIDTH": 4
+      }
+    },
+    {
+      "name": "alu_arithmetic_defect",
+      "defect_category": "arithmetic",
+      "expected_status": "FAIL",
+      "top": "alu_tb",
+      "sources": [
+        "rtl/defects/alu_arithmetic_bug.sv",
+        "testbenches/alu_tb.sv"
+      ],
+      "parameters": {
+        "alu_tb.WIDTH": 8
+      }
+    },
+    {
+      "name": "alu_overflow_defect",
+      "defect_category": "overflow",
+      "expected_status": "FAIL",
+      "top": "alu_tb",
+      "sources": [
+        "rtl/defects/alu_overflow_bug.sv",
+        "testbenches/alu_tb.sv"
+      ],
+      "parameters": {
+        "alu_tb.WIDTH": 8
+      }
+    },
+    {
+      "name": "fifo_underflow_defect",
+      "defect_category": "underflow",
+      "expected_status": "FAIL",
+      "top": "fifo_tb",
+      "sources": [
+        "rtl/defects/fifo_underflow_bug.sv",
+        "testbenches/fifo_tb.sv"
+      ],
+      "parameters": {
+        "fifo_tb.WIDTH": 8,
+        "fifo_tb.DEPTH": 4
+      }
+    },
+    {
+      "name": "fifo_overflow_defect",
+      "defect_category": "overflow",
+      "expected_status": "FAIL",
+      "top": "fifo_tb",
+      "sources": [
+        "rtl/defects/fifo_overflow_bug.sv",
+        "testbenches/fifo_tb.sv"
+      ],
+      "parameters": {
+        "fifo_tb.WIDTH": 8,
+        "fifo_tb.DEPTH": 4
+      }
+    }
+  ]
+}

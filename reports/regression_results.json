@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-09-15T03:38:03.175839+00:00",
+  "summary": {
+    "total_runs": 6,
+    "passed_runs": 6,
+    "failed_runs": 0,
+    "total_checks": 64,
+    "passed_checks": 64,
+    "failed_checks": 0,
+    "defect_runs": 0,
+    "detected_defects": 0
+  },
+  "runs": [
+    {
+      "name": "counter_width_4",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 6,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "counter_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_width_4.vvp",
+        "-Pcounter_tb.WIDTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\counter.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_width_4.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | counter | reset\nTEST_PASS | counter | disabled_hold\nTEST_PASS | counter | single_increment\nTEST_PASS | counter | multiple_increments\nTEST_PASS | counter | hold_existing_value\nTEST_PASS | counter | maximum_value_wraparound\nTEST_SUMMARY | counter | total=6 passed=6 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv:118: $finish called at 246000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "counter_width_8",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 6,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "counter_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_width_8.vvp",
+        "-Pcounter_tb.WIDTH=8",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\counter.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_width_8.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | counter | reset\nTEST_PASS | counter | disabled_hold\nTEST_PASS | counter | single_increment\nTEST_PASS | counter | multiple_increments\nTEST_PASS | counter | hold_existing_value\nTEST_PASS | counter | maximum_value_wraparound\nTEST_SUMMARY | counter | total=6 passed=6 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv:118: $finish called at 2646000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "alu_width_4",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 8,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "alu_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_width_4.vvp",
+        "-Palu_tb.WIDTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_width_4.vvp"
+      ],
+      "compile_stderr": "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\n",
+      "simulation_stdout": "TEST_PASS | alu | basic_addition\nTEST_PASS | alu | zero_addition\nTEST_PASS | alu | addition_overflow\nTEST_PASS | alu | maximum_value_addition\nTEST_PASS | alu | basic_subtraction\nTEST_PASS | alu | equal_subtraction\nTEST_PASS | alu | bitwise_and\nTEST_PASS | alu | bitwise_or\nTEST_SUMMARY | alu | total=8 passed=8 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv:115: $finish called at 8000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "alu_width_8",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 8,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "alu_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_width_8.vvp",
+        "-Palu_tb.WIDTH=8",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_width_8.vvp"
+      ],
+      "compile_stderr": "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\alu.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\n",
+      "simulation_stdout": "TEST_PASS | alu | basic_addition\nTEST_PASS | alu | zero_addition\nTEST_PASS | alu | addition_overflow\nTEST_PASS | alu | maximum_value_addition\nTEST_PASS | alu | basic_subtraction\nTEST_PASS | alu | equal_subtraction\nTEST_PASS | alu | bitwise_and\nTEST_PASS | alu | bitwise_or\nTEST_SUMMARY | alu | total=8 passed=8 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv:115: $finish called at 8000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "fifo_width_8_depth_4",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 16,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "fifo_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_width_8_depth_4.vvp",
+        "-Pfifo_tb.WIDTH=8",
+        "-Pfifo_tb.DEPTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\fifo.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_width_8_depth_4.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | fifo | reset_empty\nTEST_PASS | fifo | single_write_nonempty\nTEST_PASS | fifo | single_value_read\nTEST_PASS | fifo | empty_after_single_read\nTEST_PASS | fifo | underflow_blocked\nTEST_PASS | fifo | full_after_depth_writes\nTEST_PASS | fifo | overflow_blocked\nTEST_PASS | fifo | fifo_order_0\nTEST_PASS | fifo | fifo_order_1\nTEST_PASS | fifo | fifo_order_2\nTEST_PASS | fifo | fifo_order_3\nTEST_PASS | fifo | empty_after_complete_read\nTEST_PASS | fifo | simultaneous_read_oldest_value\nTEST_PASS | fifo | simultaneous_count_unchanged\nTEST_PASS | fifo | simultaneous_write_preserved\nTEST_PASS | fifo | final_empty_state\nTEST_SUMMARY | fifo | total=16 passed=16 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv:236: $finish called at 320000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "fifo_width_16_depth_8",
+      "defect_category": "none",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "status": "PASS",
+      "passed_checks": 20,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "fifo_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_width_16_depth_8.vvp",
+        "-Pfifo_tb.WIDTH=16",
+        "-Pfifo_tb.DEPTH=8",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\fifo.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_width_16_depth_8.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | fifo | reset_empty\nTEST_PASS | fifo | single_write_nonempty\nTEST_PASS | fifo | single_value_read\nTEST_PASS | fifo | empty_after_single_read\nTEST_PASS | fifo | underflow_blocked\nTEST_PASS | fifo | full_after_depth_writes\nTEST_PASS | fifo | overflow_blocked\nTEST_PASS | fifo | fifo_order_0\nTEST_PASS | fifo | fifo_order_1\nTEST_PASS | fifo | fifo_order_2\nTEST_PASS | fifo | fifo_order_3\nTEST_PASS | fifo | fifo_order_4\nTEST_PASS | fifo | fifo_order_5\nTEST_PASS | fifo | fifo_order_6\nTEST_PASS | fifo | fifo_order_7\nTEST_PASS | fifo | empty_after_complete_read\nTEST_PASS | fifo | simultaneous_read_oldest_value\nTEST_PASS | fifo | simultaneous_count_unchanged\nTEST_PASS | fifo | simultaneous_write_preserved\nTEST_PASS | fifo | final_empty_state\nTEST_SUMMARY | fifo | total=20 passed=20 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv:236: $finish called at 480000 (1ps)\n",
+      "simulation_stderr": ""
+    }
+  ]
+}

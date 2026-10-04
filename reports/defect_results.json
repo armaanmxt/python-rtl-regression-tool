@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-09-15T03:38:10.318684+00:00",
+  "summary": {
+    "total_runs": 6,
+    "passed_runs": 4,
+    "failed_runs": 2,
+    "total_checks": 60,
+    "passed_checks": 44,
+    "failed_checks": 16,
+    "defect_runs": 6,
+    "detected_defects": 4
+  },
+  "runs": [
+    {
+      "name": "counter_reset_defect",
+      "defect_category": "reset",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "status": "PASS",
+      "passed_checks": 0,
+      "failed_checks": 6,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "counter_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_reset_defect.vvp",
+        "-Pcounter_tb.WIDTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\counter_reset_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_reset_defect.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_FAIL | counter | reset | expected=0 actual=1\nTEST_FAIL | counter | disabled_hold | expected=0 actual=1\nTEST_FAIL | counter | single_increment | expected=1 actual=2\nTEST_FAIL | counter | multiple_increments | expected=4 actual=5\nTEST_FAIL | counter | hold_existing_value | expected=4 actual=5\nTEST_FAIL | counter | maximum_value_wraparound | expected=0 actual=1\nTEST_SUMMARY | counter | total=6 passed=0 failed=6\nFATAL: C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv:116: COUNTER REGRESSION FAILED\n       Time: 246000  Scope: counter_tb\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "counter_timing_defect",
+      "defect_category": "timing",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "status": "PASS",
+      "passed_checks": 3,
+      "failed_checks": 3,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "counter_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_timing_defect.vvp",
+        "-Pcounter_tb.WIDTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\counter_timing_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\counter_timing_defect.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | counter | reset\nTEST_PASS | counter | disabled_hold\nTEST_FAIL | counter | single_increment | expected=1 actual=0\nTEST_FAIL | counter | multiple_increments | expected=4 actual=3\nTEST_PASS | counter | hold_existing_value\nTEST_FAIL | counter | maximum_value_wraparound | expected=0 actual=15\nTEST_SUMMARY | counter | total=6 passed=3 failed=3\nFATAL: C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\counter_tb.sv:116: COUNTER REGRESSION FAILED\n       Time: 246000  Scope: counter_tb\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "alu_arithmetic_defect",
+      "defect_category": "arithmetic",
+      "expected_status": "FAIL",
+      "observed_status": "PASS",
+      "status": "FAIL",
+      "passed_checks": 8,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "alu_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_arithmetic_defect.vvp",
+        "-Palu_tb.WIDTH=8",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_arithmetic_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_arithmetic_defect.vvp"
+      ],
+      "compile_stderr": "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_arithmetic_bug.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_arithmetic_bug.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\n",
+      "simulation_stdout": "TEST_PASS | alu | basic_addition\nTEST_PASS | alu | zero_addition\nTEST_PASS | alu | addition_overflow\nTEST_PASS | alu | maximum_value_addition\nTEST_PASS | alu | basic_subtraction\nTEST_PASS | alu | equal_subtraction\nTEST_PASS | alu | bitwise_and\nTEST_PASS | alu | bitwise_or\nTEST_SUMMARY | alu | total=8 passed=8 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv:115: $finish called at 8000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "alu_overflow_defect",
+      "defect_category": "overflow",
+      "expected_status": "FAIL",
+      "observed_status": "PASS",
+      "status": "FAIL",
+      "passed_checks": 8,
+      "failed_checks": 0,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "alu_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_overflow_defect.vvp",
+        "-Palu_tb.WIDTH=8",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_overflow_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\alu_overflow_defect.vvp"
+      ],
+      "compile_stderr": "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_overflow_bug.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\alu_overflow_bug.sv:13: sorry: constant selects in always_* processes are not currently supported (all bits will be included).\n",
+      "simulation_stdout": "TEST_PASS | alu | basic_addition\nTEST_PASS | alu | zero_addition\nTEST_PASS | alu | addition_overflow\nTEST_PASS | alu | maximum_value_addition\nTEST_PASS | alu | basic_subtraction\nTEST_PASS | alu | equal_subtraction\nTEST_PASS | alu | bitwise_and\nTEST_PASS | alu | bitwise_or\nTEST_SUMMARY | alu | total=8 passed=8 failed=0\nC:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\alu_tb.sv:115: $finish called at 8000 (1ps)\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "fifo_underflow_defect",
+      "defect_category": "underflow",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "status": "PASS",
+      "passed_checks": 15,
+      "failed_checks": 1,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "fifo_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_underflow_defect.vvp",
+        "-Pfifo_tb.WIDTH=8",
+        "-Pfifo_tb.DEPTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\fifo_underflow_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_underflow_defect.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | fifo | reset_empty\nTEST_PASS | fifo | single_write_nonempty\nTEST_PASS | fifo | single_value_read\nTEST_PASS | fifo | empty_after_single_read\nTEST_FAIL | fifo | underflow_blocked | expected_data=10 actual_data=x\nTEST_PASS | fifo | full_after_depth_writes\nTEST_PASS | fifo | overflow_blocked\nTEST_PASS | fifo | fifo_order_0\nTEST_PASS | fifo | fifo_order_1\nTEST_PASS | fifo | fifo_order_2\nTEST_PASS | fifo | fifo_order_3\nTEST_PASS | fifo | empty_after_complete_read\nTEST_PASS | fifo | simultaneous_read_oldest_value\nTEST_PASS | fifo | simultaneous_count_unchanged\nTEST_PASS | fifo | simultaneous_write_preserved\nTEST_PASS | fifo | final_empty_state\nTEST_SUMMARY | fifo | total=16 passed=15 failed=1\nFATAL: C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv:234: FIFO REGRESSION FAILED\n       Time: 320000  Scope: fifo_tb\n",
+      "simulation_stderr": ""
+    },
+    {
+      "name": "fifo_overflow_defect",
+      "defect_category": "overflow",
+      "expected_status": "FAIL",
+      "observed_status": "FAIL",
+      "status": "PASS",
+      "passed_checks": 10,
+      "failed_checks": 6,
+      "compile_command": [
+        "iverilog",
+        "-g2012",
+        "-s",
+        "fifo_tb",
+        "-o",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_overflow_defect.vvp",
+        "-Pfifo_tb.WIDTH=8",
+        "-Pfifo_tb.DEPTH=4",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\rtl\\defects\\fifo_overflow_bug.sv",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv"
+      ],
+      "simulation_command": [
+        "vvp",
+        "C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\build\\fifo_overflow_defect.vvp"
+      ],
+      "compile_stderr": "",
+      "simulation_stdout": "TEST_PASS | fifo | reset_empty\nTEST_PASS | fifo | single_write_nonempty\nTEST_PASS | fifo | single_value_read\nTEST_PASS | fifo | empty_after_single_read\nTEST_PASS | fifo | underflow_blocked\nTEST_PASS | fifo | full_after_depth_writes\nTEST_FAIL | fifo | overflow_blocked | expected_empty=0 actual_empty=0 expected_full=1 actual_full=0\nTEST_FAIL | fifo | fifo_order_0 | expected_data=20 actual_data=99\nTEST_PASS | fifo | fifo_order_1\nTEST_PASS | fifo | fifo_order_2\nTEST_PASS | fifo | fifo_order_3\nTEST_FAIL | fifo | empty_after_complete_read | expected_empty=1 actual_empty=0 expected_full=0 actual_full=0\nTEST_FAIL | fifo | simultaneous_read_oldest_value | expected_data=55 actual_data=99\nTEST_PASS | fifo | simultaneous_count_unchanged\nTEST_FAIL | fifo | simultaneous_write_preserved | expected_data=66 actual_data=55\nTEST_FAIL | fifo | final_empty_state | expected_empty=1 actual_empty=0 expected_full=0 actual_full=0\nTEST_SUMMARY | fifo | total=16 passed=10 failed=6\nFATAL: C:\\Users\\amath\\OneDrive\\Documents\\python-rtl-regression-tool\\testbenches\\fifo_tb.sv:234: FIFO REGRESSION FAILED\n       Time: 320000  Scope: fifo_tb\n",
+      "simulation_stderr": ""
+    }
+  ]
+}

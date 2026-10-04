@@ -1,0 +1,75 @@
+{
+  "compiler": "iverilog",
+  "runtime": "vvp",
+  "systemverilog_flag": "-g2012",
+  "runs": [
+    {
+      "name": "counter_width_4",
+      "top": "counter_tb",
+      "sources": [
+        "rtl/counter.sv",
+        "testbenches/counter_tb.sv"
+      ],
+      "parameters": {
+        "counter_tb.WIDTH": 4
+      }
+    },
+    {
+      "name": "counter_width_8",
+      "top": "counter_tb",
+      "sources": [
+        "rtl/counter.sv",
+        "testbenches/counter_tb.sv"
+      ],
+      "parameters": {
+        "counter_tb.WIDTH": 8
+      }
+    },
+    {
+      "name": "alu_width_4",
+      "top": "alu_tb",
+      "sources": [
+        "rtl/alu.sv",
+        "testbenches/alu_tb.sv"
+      ],
+      "parameters": {
+        "alu_tb.WIDTH": 4
+      }
+    },
+    {
+      "name": "alu_width_8",
+      "top": "alu_tb",
+      "sources": [
+        "rtl/alu.sv",
+        "testbenches/alu_tb.sv"
+      ],
+      "parameters": {
+        "alu_tb.WIDTH": 8
+      }
+    },
+    {
+      "name": "fifo_width_8_depth_4",
+      "top": "fifo_tb",
+      "sources": [
+        "rtl/fifo.sv",
+        "testbenches/fifo_tb.sv"
+      ],
+      "parameters": {
+        "fifo_tb.WIDTH": 8,
+        "fifo_tb.DEPTH": 4
+      }
+    },
+    {
+      "name": "fifo_width_16_depth_8",
+      "top": "fifo_tb",
+      "sources": [
+        "rtl/fifo.sv",
+        "testbenches/fifo_tb.sv"
+      ],
+      "parameters": {
+        "fifo_tb.WIDTH": 16,
+        "fifo_tb.DEPTH": 8
+      }
+    }
+  ]
+}
